@@ -1,6 +1,6 @@
 # 19th Century French Politics
 
-![Liberty Leading the People](598px-Eugène_Delacroix_-_Le_28_Juillet._La_Liberté_guidant_le_peuple.jpg)
+![Liberty Leading the People](./Delacroix_Le_28_Juillet._La_Liberte_guidant_le_peuple.jpg)
 ## 1789 - 1792 Revolution and End of Monarchy 
 
 - The French government is nearly bankrupt because of war debts; and bad harvests have led to famine.
