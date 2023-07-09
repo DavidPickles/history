@@ -81,22 +81,22 @@
 ## 1852 - 1871 Second French Empire 
 
 - Louis Napoleon changes the constitution to be able to server longer as president, but then proclaims himself Emperor, Napoleon III. 
-- This is a coup d'etat, and ended in a Napoleon becoming emperor, so reminiscent of his uncle's ascendency, hence the quote (misquote actually): 'history always repeats itself, the first time as tragedy the second time as farce' 
-- A bit unfair, Napoleon III was an energetic and successful reformer.
+- This is a coup d'etat which results in a Napoleon becoming emperor, and so is reminiscent of his uncle's ascendency, hence the quote (misquote actually): 'history always repeats itself, the first time as tragedy the second time as farce' 
+- A bit unfair, Napoleon III is an energetic and successful reformer.
 - Responsible for enormous amounts of modernisation, industrialisation, and city reconstruction, especially in Paris. 
-- For example, he was responsible for the building of the Gard du Nord station.
-- Working with Haussmann, cleared a lot of medieval Paris, constructing wide new avenues.
-- Became ill in the late 1860s
-- Lost a war with Prussia, and lost territory.
-- Napoleon III was captured and held prisoner by the Prussians. He died a few years later in Chiselhurst, England, and is buried in Farnborough.
+- For example, he is responsible for the building of the Gard du Nord station.
+- Working with Haussmann, he clears a lot of medieval Paris, constructing wide new avenues.
+- Becomes ill in the late 1860s
+- Loses a war with Prussia, and loses territory.
+- Napoleon III is captured and held prisoner by the Prussians. He dies a few years later in Chiselhurst, England, and is buried in Farnborough.
 
 
 ## 1871 - 1940 Third Republic 
 
 - France loses the Franco-Prussian war, Paris is captured, and the settlement with Prussia means France forfeits its eastern regions.
 - The Germans leave Paris.
-- Revolution in Paris, 1870-1871, leads to the radical Paris Commune. Suppressed by the French army who killed thousands of people (up to 20,000).
-- Intention that the post-war constitution be temporary, and there some want the monarchy should be restored. 
+- Revolution in Paris, 1870-1871, leads to the radical Paris Commune. It is suppressed by the French army who kill thousands of people (up to 20,000).
+- The post-war constitution is intended to be temporary, and there are some who want the monarchy to be restored. 
 - But republicanism is increasingly popular, and it's not clear among the monarchists who should be king. Republicanism dominates. 
 
 
