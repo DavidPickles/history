@@ -31,7 +31,7 @@
 - Robespierre is removed from the Committee for Public Safety, and executed in July 1794. 
 - The National Convention adopts a new constitution which is approved by plebiscite. 
   - Voting is restricted by a stringent property qualification.
-  - The Directory is a group of five who jointly have executive power. Laws are drafted by the 'Council of 500', and reviewed by an upper of house of 250 men.  
+  - The Directory is a group of five who jointly have executive power. Laws are drafted by the 'Council of 500', and reviewed by an upper house of 250 men.  
 - Throughout its existence the Directory has to deal with an economy in permanent crisis, and with constant war against foreign coalitions. 
 - The wars, in general, don't go well, but Napoleon successfully conquers a large part of Italy and then moves on to Egypt.
 - In 1799 he returns from Egypt and carries out a coup d'etat.
