@@ -48,7 +48,7 @@
 - In 1812 in response to the emperor of Russia's leadership of an insurrection against France, Napoleon invades Russia. 
 - Despite reaching Moscow he is defeated by the scale of the country and the climate, and retreats in the winter. 
 - Losses follow, France surrenders, and Napoleon abdicates in April 1814. 
-- But less than a year later he escapes from exile and retakes power in 1815, but only for a hundred days.
+- Less than a year later he escapes from exile and retakes power in 1815, but only for a hundred days.
 - He is defeated by the British and Prussians at Waterloo. 
 
 ## 1814 - 1830 Bourbon Restoration 
