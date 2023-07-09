@@ -28,25 +28,27 @@
 
 ## 1795 - 1799 Directory
 
-- Robespierre is removed and executed in July 1794, and a committee set-up to create a new constitution. Voting is restricted by a stringent property qualification.
-- The Directory is a group of five who jointly have executive power. Laws are drafted by the 'Council of 500' reviewed by an upper of house of 250 men.  
-- Throughout its existence the Directory has to deal with an economy in permanent crisis. with constant war against with foreign coalitions, and suffers a number of military disasters. 
-- Napoleon successfully conquers a large part of Italy and then moves on to Egypt.
+- Robespierre is removed from the Committee for Public Safety, and executed in July 1794. 
+- The National Convention adopts a new constitution which is approved by plebiscite. 
+  - Voting is restricted by a stringent property qualification.
+  - The Directory is a group of five who jointly have executive power. Laws are drafted by the 'Council of 500', and reviewed by an upper of house of 250 men.  
+- Throughout its existence the Directory has to deal with an economy in permanent crisis, and with constant war against foreign coalitions. 
+- The wars, in general, don't go well, but Napoleon successfully conquers a large part of Italy and then moves on to Egypt.
 - In 1799 he returns from Egypt and carries out a coup d'etat.
 
 ## 1799 - 1804 Consulate
 
-- Napeolean sets up a dictatorship with himself as the the 'first consul', this is endorsed by a public referendum.
+- Napoleon sets-up a dictatorship with himself as the the 'first consul', this is endorsed by a public referendum.
 - Economically, France improves.   
 
 ##  1804 - 1815 First French Empire  
 
-- In 1804 Napolean  becomes Emperor of the French. 
+- In 1804 Napoleon  becomes Emperor of the French. 
 - France becomes the dominant power in Europe, with defeats for Austria, Prussia, Russia, and Britain during the Napoleonic Wars. By 1812 most of Western Europe is either directly administered by France, a client state, or under military occupation.
 - In 1812 in response to the emperor of Russia's leadership of an insurrection against France, Napoleon invades Russia. 
 - Despite reaching Moscow he is defeated by the scale of the country and the climate, and retreats in the winter. 
 - Losses follow, France surrenders, and Napoleon abdicates in April 1814. 
-- But less than a year later he escapes from from exile and retakes the throne in 1815, but only for a hundred days.
+- But less than a year later he escapes from exile and retakes power in 1815, but only for a hundred days.
 - He is defeated by the British and Prussians at Waterloo. 
 
 ## 1814 - 1830 Bourbon Restoration 
@@ -62,7 +64,7 @@
 
 ## 1830 -  1848 July Monarchy: Kingdom of France 
 
-- Louis-Phillipe, Duke of Orleans is given the throne by the bourgeois-controlled Chamber of Deputies 
+- Louis-Philippe, Duke of Orleans is given the throne by the bourgeois-controlled Chamber of Deputies 
 - He rules as 'King of the French', known as 'The Citizen King'.
 - As a young man had fought on the revolutionary side, but broke with them over their decision to execute Louis XVI.
 - He promises to follow a 'middle road'.
@@ -95,7 +97,7 @@
 - The Germans leave Paris.
 - Revolution in Paris, 1870-1871, leads to the radical Paris Commune. Suppressed by the French army who killed thousands of people (up to 20,000).
 - Intention that the post-war constitution be temporary, and there some want the monarchy should be restored. 
-- But republicanism is increasingly popular, and it's not clear among the monarchists who should be kind. Republicanism dominates. 
+- But republicanism is increasingly popular, and it's not clear among the monarchists who should be king. Republicanism dominates. 
 
 
 
