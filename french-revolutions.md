@@ -73,20 +73,20 @@
 
 ## 1848 - 1852 Second French Republic 
 
-- A democratic republic - no king
+- A democratic republic - no king.
 - All men had the vote: universal male suffrage. 
-- Louis Napoleon, nephew of the original Napoleon, is elected President
+- Louis Napoleon, nephew of the original Napoleon, is elected President.
 - According to the constitution he is supposed to step down after four years, but doesn't. 
 
 ## 1852 - 1871 Second French Empire 
 
-- Louis Napoleon changes the constitution to be able to server longer as president, but then proclaims himself Emperor, Napoleon III. 
-- This is a coup d'etat which results in a Napoleon becoming emperor, and so is reminiscent of his uncle's ascendency, hence the quote (misquote actually): 'history always repeats itself, the first time as tragedy the second time as farce' 
+- Louis Napoleon changes the constitution to be able to server longer as president, but then proclaims himself Emperor Napoleon III. 
+- This is a coup d'etat which results in a Napoleon becoming emperor, and so is reminiscent of his uncle's ascendency to power, hence the quote (misquote actually): 'history always repeats itself, the first time as tragedy the second time as farce' 
 - A bit unfair, Napoleon III is an energetic and successful reformer.
 - Responsible for enormous amounts of modernisation, industrialisation, and city reconstruction, especially in Paris. 
 - For example, he is responsible for the building of the Gard du Nord station.
 - Working with Haussmann, he clears a lot of medieval Paris, constructing wide new avenues.
-- Becomes ill in the late 1860s
+- Becomes ill in the late 1860s.
 - Loses a war with Prussia, and loses territory.
 - Napoleon III is captured and held prisoner by the Prussians. He dies a few years later in Chiselhurst, England, and is buried in Farnborough.
 
