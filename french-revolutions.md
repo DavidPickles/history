@@ -84,7 +84,7 @@
 - This is a coup d'etat which results in a Napoleon becoming emperor, and so is reminiscent of his uncle's ascendency to power, hence the quote (misquote actually): 'history always repeats itself, the first time as tragedy the second time as farce' 
 - A bit unfair, Napoleon III is an energetic and successful reformer.
 - Responsible for enormous amounts of modernisation, industrialisation, and city reconstruction, especially in Paris. 
-- For example, he is responsible for the building of the Gard du Nord station.
+- For example, he is responsible for building the Gard du Nord station.
 - Working with Haussmann, he clears a lot of medieval Paris, constructing wide new avenues.
 - Becomes ill in the late 1860s.
 - Loses a war with Prussia, and loses territory.
