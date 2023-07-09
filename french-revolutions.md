@@ -69,7 +69,8 @@
 - As a young man had fought on the revolutionary side, but broke with them over their decision to execute Louis XVI.
 - He promises to follow a 'middle road'.
 - The government is dominated by the 'high bourgeoisie' of bankers, financiers, industrialists, and merchants. 
-- Under threat from political dissent, eventually there is another revolution.
+- Voting is restricted to men paying a high level of taxes, and is thereby restricted to about one percent of the population.
+- There is a lot political dissent, and eventually another revolution.
 
 ## 1848 - 1852 Second French Republic 
 
