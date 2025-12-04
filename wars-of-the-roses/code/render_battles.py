@@ -32,7 +32,7 @@ def generate_html(data: dict) -> str:
     
     battles_html = ""
     
-    for battle in data['battles']:
+    for battle in data['events']:
         date = battle['date']
         name = battle['name']
         victor = battle['victor']
@@ -73,14 +73,11 @@ def generate_html(data: dict) -> str:
         <div class="battle-card" style="border-left-color: {victor_color}">
             <div class="battle-header" onclick="toggleBattle(this)">
                 <div class="battle-summary">
-                    <div class="battle-date">{date}</div>
-                    <h2 class="battle-name">{name}</h2>
-                    <div class="outcome">
-                        <span class="victor-label">Victor:</span>
-                        <span class="victor-badge" style="background-color: {victor_color}; color: {'#000' if victor == 'york' else '#fff'}">
-                            {victor_name}
-                        </span>
-                    </div>
+                    <span class="battle-date">{date}</span>
+                    <span class="battle-name">{name}</span>
+                    <span class="victor-badge" style="background-color: {victor_color}; color: {'#000' if victor == 'york' else '#fff'}">
+                        {victor_name}
+                    </span>
                 </div>
                 <div class="expand-icon">▼</div>
             </div>
@@ -116,14 +113,26 @@ def generate_html(data: dict) -> str:
         }}
         
         .container {{
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 40px 20px;
+        }}
+
+        @media (max-width: 768px) {{
+            .container {{
+                padding: 20px 15px;
+            }}
         }}
         
         header {{
             text-align: center;
             margin-bottom: 50px;
+        }}
+
+        @media (max-width: 768px) {{
+            header {{
+                margin-bottom: 30px;
+            }}
         }}
         
         h1 {{
@@ -132,10 +141,22 @@ def generate_html(data: dict) -> str:
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }}
-        
+
+        @media (max-width: 768px) {{
+            h1 {{
+                font-size: 1.8rem;
+            }}
+        }}
+
         .subtitle {{
             font-size: 1.2rem;
             color: #aaa;
+        }}
+
+        @media (max-width: 768px) {{
+            .subtitle {{
+                font-size: 1rem;
+            }}
         }}
         
         .legend {{
@@ -163,6 +184,12 @@ def generate_html(data: dict) -> str:
             position: relative;
             padding-left: 30px;
         }}
+
+        @media (max-width: 768px) {{
+            .timeline {{
+                padding-left: 20px;
+            }}
+        }}
         
         .timeline::before {{
             content: '';
@@ -177,9 +204,9 @@ def generate_html(data: dict) -> str:
         
         .battle-card {{
             background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border-left: 5px solid;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border-left: 4px solid;
             position: relative;
             transition: transform 0.2s, box-shadow 0.2s;
             overflow: hidden;
@@ -194,20 +221,30 @@ def generate_html(data: dict) -> str:
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px;
+            padding: 8px 15px;
             cursor: pointer;
             user-select: none;
         }}
 
         .battle-summary {{
             flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }}
+
+        @media (max-width: 768px) {{
+            .battle-summary {{
+                gap: 8px;
+            }}
         }}
 
         .expand-icon {{
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #888;
             transition: transform 0.3s ease;
-            margin-left: 20px;
+            margin-left: 15px;
         }}
 
         .battle-card.expanded .expand-icon {{
@@ -218,37 +255,61 @@ def generate_html(data: dict) -> str:
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            padding: 0 25px;
+            padding: 0 15px;
         }}
 
         .battle-card.expanded .battle-details {{
             max-height: 1000px;
-            padding: 0 25px 25px 25px;
+            padding: 0 15px 15px 15px;
         }}
-        
+
         .battle-card::before {{
             content: '';
             position: absolute;
             left: -38px;
-            top: 30px;
-            width: 12px;
-            height: 12px;
+            top: 15px;
+            width: 10px;
+            height: 10px;
             background: #fff;
             border-radius: 50%;
             border: 3px solid #1a1a2e;
         }}
-        
-        .battle-date {{
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 5px;
-            font-family: monospace;
+
+        @media (max-width: 768px) {{
+            .battle-card::before {{
+                left: -28px;
+                width: 8px;
+                height: 8px;
+            }}
         }}
-        
+
+        .battle-date {{
+            font-size: 0.85rem;
+            color: #888;
+            font-family: monospace;
+            min-width: 80px;
+        }}
+
+        @media (max-width: 768px) {{
+            .battle-date {{
+                font-size: 0.75rem;
+                min-width: 70px;
+            }}
+        }}
+
         .battle-name {{
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #fff;
-            margin-bottom: 15px;
+            font-weight: 500;
+            flex: 1;
+            min-width: 150px;
+        }}
+
+        @media (max-width: 768px) {{
+            .battle-name {{
+                font-size: 0.9rem;
+                min-width: 120px;
+            }}
         }}
         
         .commanders-section {{
@@ -297,19 +358,19 @@ def generate_html(data: dict) -> str:
             display: flex;
             align-items: center;
             gap: 10px;
-            margin: 15px 0;
         }}
-        
+
         .victor-label {{
             font-weight: bold;
             color: #888;
         }}
-        
+
         .victor-badge {{
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 3px 10px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            white-space: nowrap;
         }}
         
         .battle-notes {{
@@ -319,34 +380,7 @@ def generate_html(data: dict) -> str:
             padding-top: 15px;
             margin-top: 10px;
         }}
-        
-        .stats {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }}
-        
-        .stat-card {{
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }}
-        
-        .stat-number {{
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #fff;
-        }}
-        
-        .stat-label {{
-            font-size: 0.9rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }}
-        
+
         footer {{
             text-align: center;
             margin-top: 50px;
@@ -365,38 +399,19 @@ def generate_html(data: dict) -> str:
             <div class="legend">
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #FFFFFF;"></div>
-                    <span>House of York</span>
+                    <span>York</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #DC143C;"></div>
-                    <span>House of Lancaster</span>
+                    <span>Lancaster</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #228B22;"></div>
-                    <span>House of Tudor</span>
+                    <span>Tudor</span>
                 </div>
             </div>
         </header>
-        
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">{len(data['battles'])}</div>
-                <div class="stat-label">Total Battles</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">{sum(1 for b in data['battles'] if b['victor'] == 'york')}</div>
-                <div class="stat-label">York Victories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">{sum(1 for b in data['battles'] if b['victor'] == 'lancaster')}</div>
-                <div class="stat-label">Lancaster Victories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">{sum(1 for b in data['battles'] if b['victor'] == 'tudor')}</div>
-                <div class="stat-label">Tudor Victories</div>
-            </div>
-        </div>
-        
+
         <div class="timeline">
             {battles_html}
         </div>

@@ -1,14 +1,16 @@
 {
+  "$schema": "./wars_of_the_roses_schema.json",
   "conflict": "Wars of the Roses",
   "period": "1455-1487",
   "factions": {
-    "lancaster": "House of Lancaster",
-    "york": "House of York",
-    "tudor": "House of Tudor"
+    "lancaster": "Lancaster",
+    "york": "York",
+    "tudor": "Tudor"
   },
-  "battles": [
+  "events": [
     {
-      "name": "First Battle of St Albans",
+      "type": "battle",
+      "name": "St Albans (First)",
       "date": "1455-05-22",
       "commanders": [
         {"name": "Richard, Duke of York", "allegiance": "york"},
@@ -21,7 +23,8 @@
       "notes": "Opening battle of the wars; Henry VI captured; Somerset killed"
     },
     {
-      "name": "Battle of Blore Heath",
+      "type": "battle",
+      "name": "Blore Heath",
       "date": "1459-09-23",
       "commanders": [
         {"name": "Earl of Salisbury", "allegiance": "york"},
@@ -31,7 +34,8 @@
       "notes": "Audley killed; Yorkist force outnumbered but victorious"
     },
     {
-      "name": "Battle of Ludford Bridge",
+      "type": "battle",
+      "name": "Ludford Bridge",
       "date": "1459-10-12",
       "commanders": [
         {"name": "Richard, Duke of York", "allegiance": "york"},
@@ -44,7 +48,8 @@
       "notes": "Yorkist army collapsed after defections; leaders fled abroad"
     },
     {
-      "name": "Battle of Northampton",
+      "type": "battle",
+      "name": "Northampton",
       "date": "1460-07-10",
       "commanders": [
         {"name": "Earl of Warwick", "allegiance": "york"},
@@ -56,7 +61,8 @@
       "notes": "Henry VI captured; Buckingham killed"
     },
     {
-      "name": "Battle of Wakefield",
+      "type": "battle",
+      "name": "Wakefield",
       "date": "1460-12-30",
       "commanders": [
         {"name": "Richard, Duke of York", "allegiance": "york"},
@@ -68,7 +74,8 @@
       "notes": "Richard of York killed; major Lancastrian victory"
     },
     {
-      "name": "Battle of Mortimer's Cross",
+      "type": "battle",
+      "name": "Mortimer's Cross",
       "date": "1461-02-02",
       "commanders": [
         {"name": "Edward, Earl of March", "allegiance": "york"},
@@ -79,7 +86,8 @@
       "notes": "Future Edward IV's first major victory"
     },
     {
-      "name": "Second Battle of St Albans",
+      "type": "battle",
+      "name": "St Albans (Second)",
       "date": "1461-02-17",
       "commanders": [
         {"name": "Earl of Warwick", "allegiance": "york"},
@@ -90,7 +98,8 @@
       "notes": "Henry VI freed from Yorkist custody"
     },
     {
-      "name": "Battle of Towton",
+      "type": "battle",
+      "name": "Towton",
       "date": "1461-03-29",
       "commanders": [
         {"name": "Edward IV", "allegiance": "york"},
@@ -102,7 +111,8 @@
       "notes": "Largest and bloodiest battle on English soil; fought in a snowstorm"
     },
     {
-      "name": "Battle of Hedgeley Moor",
+      "type": "battle",
+      "name": "Hedgeley Moor",
       "date": "1464-04-25",
       "commanders": [
         {"name": "Lord Montagu", "allegiance": "york"},
@@ -113,7 +123,8 @@
       "notes": "Part of campaign against Lancastrian holdouts in the north"
     },
     {
-      "name": "Battle of Hexham",
+      "type": "battle",
+      "name": "Hexham",
       "date": "1464-05-15",
       "commanders": [
         {"name": "Lord Montagu", "allegiance": "york"},
@@ -123,7 +134,8 @@
       "notes": "Somerset captured and executed; ended northern Lancastrian resistance"
     },
     {
-      "name": "Battle of Edgecote Moor",
+      "type": "battle",
+      "name": "Edgecote Moor",
       "date": "1469-07-26",
       "commanders": [
         {"name": "Earl of Pembroke", "allegiance": "york"},
@@ -135,7 +147,8 @@
       "notes": "Warwick-backed rebellion against Edward IV"
     },
     {
-      "name": "Battle of Losecote Field",
+      "type": "battle",
+      "name": "Losecote Field",
       "date": "1470-03-12",
       "commanders": [
         {"name": "Edward IV", "allegiance": "york"},
@@ -145,7 +158,8 @@
       "notes": "Named for discarded coats revealing rebel allegiances; Warwick fled to France"
     },
     {
-      "name": "Battle of Barnet",
+      "type": "battle",
+      "name": "Barnet",
       "date": "1471-04-14",
       "commanders": [
         {"name": "Edward IV", "allegiance": "york"},
@@ -156,7 +170,8 @@
       "notes": "Warwick 'the Kingmaker' killed; fought in heavy fog"
     },
     {
-      "name": "Battle of Tewkesbury",
+      "type": "battle",
+      "name": "Tewkesbury",
       "date": "1471-05-04",
       "commanders": [
         {"name": "Edward IV", "allegiance": "york"},
@@ -169,7 +184,8 @@
       "notes": "Prince Edward killed; ended the main Lancastrian line"
     },
     {
-      "name": "Battle of Bosworth Field",
+      "type": "battle",
+      "name": "Bosworth Field",
       "date": "1485-08-22",
       "commanders": [
         {"name": "Richard III", "allegiance": "york"},
@@ -184,7 +200,8 @@
       "notes": "Richard III killed; Henry VII crowned; end of Yorkist rule"
     },
     {
-      "name": "Battle of Stoke Field",
+      "type": "battle",
+      "name": "Stoke Field",
       "date": "1487-06-16",
       "commanders": [
         {"name": "Henry VII", "allegiance": "tudor"},

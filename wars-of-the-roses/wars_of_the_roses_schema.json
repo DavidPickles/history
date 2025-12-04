@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wars of the Roses Events",
+  "type": "object",
+  "required": ["conflict", "period", "factions", "events"],
+  "properties": {
+    "conflict": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{4}$"
+    },
+    "factions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    }
+  },
+  "$defs": {
+    "event": {
+      "oneOf": [
+        { "$ref": "#/$defs/battle" },
+        { "$ref": "#/$defs/death" },
+        { "$ref": "#/$defs/coronation" },
+        { "$ref": "#/$defs/treaty" }
+      ],
+      "discriminator": {
+        "propertyName": "type"
+      }
+    },
+    "eventBase": {
+      "type": "object",
+      "required": ["type", "name", "date"],
+      "properties": {
+        "type": { "type": "string" },
+        "name": { "type": "string" },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "battle": {
+      "allOf": [
+        { "$ref": "#/$defs/eventBase" },
+        {
+          "type": "object",
+          "required": ["type", "commanders", "victor"],
+          "properties": {
+            "type": { "const": "battle" },
+            "commanders": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/commander"
+              },
+              "minItems": 1
+            },
+            "victor": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "commander": {
+      "type": "object",
+      "required": ["name", "allegiance"],
+      "properties": {
+        "name": { "type": "string" },
+        "allegiance": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "death": {
+      "allOf": [
+        { "$ref": "#/$defs/eventBase" },
+        {
+          "type": "object",
+          "required": ["type", "person"],
+          "properties": {
+            "type": { "const": "death" },
+            "person": { "type": "string" },
+            "location": { "type": "string" },
+            "cause": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "coronation": {
+      "allOf": [
+        { "$ref": "#/$defs/eventBase" },
+        {
+          "type": "object",
+          "required": ["type", "monarch"],
+          "properties": {
+            "type": { "const": "coronation" },
+            "monarch": { "type": "string" },
+            "location": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "treaty": {
+      "allOf": [
+        { "$ref": "#/$defs/eventBase" },
+        {
+          "type": "object",
+          "required": ["type", "parties"],
+          "properties": {
+            "type": { "const": "treaty" },
+            "parties": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 2
+            }
+          }
+        }
+      ]
+    }
+  }
+}
