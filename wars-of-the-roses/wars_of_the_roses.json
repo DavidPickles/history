@@ -10,14 +10,29 @@
   "events": [
     {
       "type": "battle",
-      "name": "St Albans (First)",
+      "name": "St Albans (1st)",
       "date": "1455-05-22",
       "commanders": [
-        {"name": "Richard, Duke of York", "allegiance": "york"},
-        {"name": "Earl of Salisbury", "allegiance": "york"},
-        {"name": "Earl of Warwick", "allegiance": "york"},
-        {"name": "King Henry VI", "allegiance": "lancaster"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"}
+        {
+          "name": "Richard, Duke of York",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Salisbury",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "york"
+        },
+        {
+          "name": "King Henry VI",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Opening battle of the wars; Henry VI captured; Somerset killed"
@@ -27,8 +42,14 @@
       "name": "Blore Heath",
       "date": "1459-09-23",
       "commanders": [
-        {"name": "Earl of Salisbury", "allegiance": "york"},
-        {"name": "Lord Audley", "allegiance": "lancaster"}
+        {
+          "name": "Earl of Salisbury",
+          "allegiance": "york"
+        },
+        {
+          "name": "Lord Audley",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Audley killed; Yorkist force outnumbered but victorious"
@@ -38,11 +59,27 @@
       "name": "Ludford Bridge",
       "date": "1459-10-12",
       "commanders": [
-        {"name": "Richard, Duke of York", "allegiance": "york"},
-        {"name": "Earl of Salisbury", "allegiance": "york"},
-        {"name": "Earl of Warwick", "allegiance": "york"},
-        {"name": "Andrew Trollope", "allegiance": "york", "notes": "Defected to Lancaster during the battle"},
-        {"name": "King Henry VI", "allegiance": "lancaster"}
+        {
+          "name": "Richard, Duke of York",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Salisbury",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "york"
+        },
+        {
+          "name": "Andrew Trollope",
+          "allegiance": "york",
+          "notes": "Defected to Lancaster during the battle"
+        },
+        {
+          "name": "King Henry VI",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "lancaster",
       "notes": "Yorkist army collapsed after defections; leaders fled abroad"
@@ -52,10 +89,23 @@
       "name": "Northampton",
       "date": "1460-07-10",
       "commanders": [
-        {"name": "Earl of Warwick", "allegiance": "york"},
-        {"name": "Earl of March", "allegiance": "york"},
-        {"name": "Duke of Buckingham", "allegiance": "lancaster"},
-        {"name": "Lord Grey of Ruthin", "allegiance": "lancaster", "notes": "Defected to York during the battle"}
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of March",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Buckingham",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Lord Grey of Ruthin",
+          "allegiance": "lancaster",
+          "notes": "Defected to York during the battle"
+        }
       ],
       "victor": "york",
       "notes": "Henry VI captured; Buckingham killed"
@@ -65,10 +115,22 @@
       "name": "Wakefield",
       "date": "1460-12-30",
       "commanders": [
-        {"name": "Richard, Duke of York", "allegiance": "york"},
-        {"name": "Earl of Salisbury", "allegiance": "york"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"},
-        {"name": "Earl of Northumberland", "allegiance": "lancaster"}
+        {
+          "name": "Richard, Duke of York",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Salisbury",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Earl of Northumberland",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "lancaster",
       "notes": "Richard of York killed; major Lancastrian victory"
@@ -78,21 +140,39 @@
       "name": "Mortimer's Cross",
       "date": "1461-02-02",
       "commanders": [
-        {"name": "Edward, Earl of March", "allegiance": "york"},
-        {"name": "Earl of Pembroke", "allegiance": "lancaster"},
-        {"name": "Earl of Wiltshire", "allegiance": "lancaster"}
+        {
+          "name": "Edward, Earl of March",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Pembroke",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Earl of Wiltshire",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Future Edward IV's first major victory"
     },
     {
       "type": "battle",
-      "name": "St Albans (Second)",
+      "name": "St Albans (2nd)",
       "date": "1461-02-17",
       "commanders": [
-        {"name": "Earl of Warwick", "allegiance": "york"},
-        {"name": "Queen Margaret", "allegiance": "lancaster"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"}
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "york"
+        },
+        {
+          "name": "Queen Margaret",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "lancaster",
       "notes": "Henry VI freed from Yorkist custody"
@@ -102,22 +182,51 @@
       "name": "Towton",
       "date": "1461-03-29",
       "commanders": [
-        {"name": "Edward IV", "allegiance": "york"},
-        {"name": "Earl of Warwick", "allegiance": "york"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"},
-        {"name": "Earl of Northumberland", "allegiance": "lancaster"}
+        {
+          "name": "Edward IV",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Earl of Northumberland",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Largest and bloodiest battle on English soil; fought in a snowstorm"
+    },
+    {
+      "type": "coronation",
+      "name": "Edward IV",
+      "date": "1461-06-28",
+      "monarch": "Edward IV",
+      "location": "Westminster Abbey",
+      "notes": "First Yorkist king; crowned after victories at Mortimer's Cross and Towton"
     },
     {
       "type": "battle",
       "name": "Hedgeley Moor",
       "date": "1464-04-25",
       "commanders": [
-        {"name": "Lord Montagu", "allegiance": "york"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"},
-        {"name": "Sir Ralph Percy", "allegiance": "lancaster"}
+        {
+          "name": "Lord Montagu",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Sir Ralph Percy",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Part of campaign against Lancastrian holdouts in the north"
@@ -127,8 +236,14 @@
       "name": "Hexham",
       "date": "1464-05-15",
       "commanders": [
-        {"name": "Lord Montagu", "allegiance": "york"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"}
+        {
+          "name": "Lord Montagu",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Somerset captured and executed; ended northern Lancastrian resistance"
@@ -138,10 +253,23 @@
       "name": "Edgecote Moor",
       "date": "1469-07-26",
       "commanders": [
-        {"name": "Earl of Pembroke", "allegiance": "york"},
-        {"name": "Earl of Devon", "allegiance": "york"},
-        {"name": "Robin of Redesdale", "allegiance": "lancaster"},
-        {"name": "Earl of Warwick", "allegiance": "lancaster", "notes": "Formerly Yorkist; now in rebellion against Edward IV"}
+        {
+          "name": "Earl of Pembroke",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Devon",
+          "allegiance": "york"
+        },
+        {
+          "name": "Robin of Redesdale",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "lancaster",
+          "notes": "Formerly Yorkist; now in rebellion against Edward IV"
+        }
       ],
       "victor": "lancaster",
       "notes": "Warwick-backed rebellion against Edward IV"
@@ -151,8 +279,14 @@
       "name": "Losecote Field",
       "date": "1470-03-12",
       "commanders": [
-        {"name": "Edward IV", "allegiance": "york"},
-        {"name": "Sir Robert Welles", "allegiance": "lancaster"}
+        {
+          "name": "Edward IV",
+          "allegiance": "york"
+        },
+        {
+          "name": "Sir Robert Welles",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Named for discarded coats revealing rebel allegiances; Warwick fled to France"
@@ -162,9 +296,18 @@
       "name": "Barnet",
       "date": "1471-04-14",
       "commanders": [
-        {"name": "Edward IV", "allegiance": "york"},
-        {"name": "Earl of Warwick", "allegiance": "lancaster"},
-        {"name": "Duke of Exeter", "allegiance": "lancaster"}
+        {
+          "name": "Edward IV",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Warwick",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Duke of Exeter",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Warwick 'the Kingmaker' killed; fought in heavy fog"
@@ -174,41 +317,149 @@
       "name": "Tewkesbury",
       "date": "1471-05-04",
       "commanders": [
-        {"name": "Edward IV", "allegiance": "york"},
-        {"name": "Duke of Gloucester", "allegiance": "york"},
-        {"name": "Queen Margaret", "allegiance": "lancaster"},
-        {"name": "Duke of Somerset", "allegiance": "lancaster"},
-        {"name": "Prince Edward", "allegiance": "lancaster"}
+        {
+          "name": "Edward IV",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Gloucester",
+          "allegiance": "york"
+        },
+        {
+          "name": "Queen Margaret",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Duke of Somerset",
+          "allegiance": "lancaster"
+        },
+        {
+          "name": "Prince Edward",
+          "allegiance": "lancaster"
+        }
       ],
       "victor": "york",
       "notes": "Prince Edward killed; ended the main Lancastrian line"
+    },
+    {
+      "type": "death",
+      "name": "Henry VI",
+      "date": "1471-05-21",
+      "person": "King Henry VI",
+      "location": "Tower of London",
+      "cause": "Murder (officially 'melancholy')",
+      "notes": "Died the night Edward IV returned to London; almost certainly killed on Edward's orders"
+    },
+    {
+      "type": "treaty",
+      "name": "Picquigny",
+      "date": "1475-08-29",
+      "parties": [
+        "England",
+        "France"
+      ],
+      "notes": "Edward IV agreed to withdraw from France in exchange for 75,000 crowns and an annual pension"
+    },
+    {
+      "type": "death",
+      "name": "Edward IV",
+      "date": "1483-04-09",
+      "person": "King Edward IV",
+      "location": "Westminster",
+      "cause": "Illness (possibly pneumonia or typhoid)",
+      "notes": "Unexpected death at age 40 triggered succession crisis"
+    },
+    {
+      "type": "coronation",
+      "name": "Richard III",
+      "date": "1483-07-06",
+      "monarch": "Richard III",
+      "location": "Westminster Abbey",
+      "notes": "Crowned after declaring his nephews illegitimate"
+    },
+    {
+      "type": "death",
+      "name": "Disappearance of the Princes in the Tower",
+      "date": "1483-09-01",
+      "person": "Edward V and Richard of York",
+      "location": "Tower of London",
+      "cause": "Unknown (presumed murdered)",
+      "notes": "Last seen around late summer 1483; fate remains one of history's great mysteries"
     },
     {
       "type": "battle",
       "name": "Bosworth Field",
       "date": "1485-08-22",
       "commanders": [
-        {"name": "Richard III", "allegiance": "york"},
-        {"name": "Duke of Norfolk", "allegiance": "york"},
-        {"name": "Earl of Northumberland", "allegiance": "york", "notes": "Held back his forces; did not engage"},
-        {"name": "Henry Tudor", "allegiance": "tudor"},
-        {"name": "Earl of Oxford", "allegiance": "tudor"},
-        {"name": "Lord Stanley", "allegiance": "uncertain", "notes": "Nominally Yorkist; intervened for Tudor at the crucial moment"},
-        {"name": "Sir William Stanley", "allegiance": "uncertain", "notes": "Intervened decisively for Tudor"}
+        {
+          "name": "Richard III",
+          "allegiance": "york"
+        },
+        {
+          "name": "Duke of Norfolk",
+          "allegiance": "york"
+        },
+        {
+          "name": "Earl of Northumberland",
+          "allegiance": "york",
+          "notes": "Held back his forces; did not engage"
+        },
+        {
+          "name": "Henry Tudor",
+          "allegiance": "tudor"
+        },
+        {
+          "name": "Earl of Oxford",
+          "allegiance": "tudor"
+        },
+        {
+          "name": "Lord Stanley",
+          "allegiance": "uncertain",
+          "notes": "Nominally Yorkist; intervened for Tudor at the crucial moment"
+        },
+        {
+          "name": "Sir William Stanley",
+          "allegiance": "uncertain",
+          "notes": "Intervened decisively for Tudor"
+        }
       ],
       "victor": "tudor",
       "notes": "Richard III killed; Henry VII crowned; end of Yorkist rule"
+    },
+    {
+      "type": "coronation",
+      "name": "Henry VII",
+      "date": "1485-10-30",
+      "monarch": "Henry VII",
+      "location": "Westminster Abbey",
+      "notes": "First Tudor monarch; married Elizabeth of York to unite the houses"
     },
     {
       "type": "battle",
       "name": "Stoke Field",
       "date": "1487-06-16",
       "commanders": [
-        {"name": "Henry VII", "allegiance": "tudor"},
-        {"name": "Earl of Oxford", "allegiance": "tudor"},
-        {"name": "Earl of Lincoln", "allegiance": "york"},
-        {"name": "Lord Lovell", "allegiance": "york"},
-        {"name": "Martin Schwartz", "allegiance": "york", "notes": "German mercenary captain"}
+        {
+          "name": "Henry VII",
+          "allegiance": "tudor"
+        },
+        {
+          "name": "Earl of Oxford",
+          "allegiance": "tudor"
+        },
+        {
+          "name": "Earl of Lincoln",
+          "allegiance": "york"
+        },
+        {
+          "name": "Lord Lovell",
+          "allegiance": "york"
+        },
+        {
+          "name": "Martin Schwartz",
+          "allegiance": "york",
+          "notes": "German mercenary captain"
+        }
       ],
       "victor": "tudor",
       "notes": "Final battle of the wars; Lambert Simnel pretender defeated"
