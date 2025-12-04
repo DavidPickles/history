@@ -1,0 +1,200 @@
+{
+  "conflict": "Wars of the Roses",
+  "period": "1455-1487",
+  "factions": {
+    "lancaster": "House of Lancaster",
+    "york": "House of York",
+    "tudor": "House of Tudor"
+  },
+  "battles": [
+    {
+      "name": "First Battle of St Albans",
+      "date": "1455-05-22",
+      "commanders": [
+        {"name": "Richard, Duke of York", "allegiance": "york"},
+        {"name": "Earl of Salisbury", "allegiance": "york"},
+        {"name": "Earl of Warwick", "allegiance": "york"},
+        {"name": "King Henry VI", "allegiance": "lancaster"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Opening battle of the wars; Henry VI captured; Somerset killed"
+    },
+    {
+      "name": "Battle of Blore Heath",
+      "date": "1459-09-23",
+      "commanders": [
+        {"name": "Earl of Salisbury", "allegiance": "york"},
+        {"name": "Lord Audley", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Audley killed; Yorkist force outnumbered but victorious"
+    },
+    {
+      "name": "Battle of Ludford Bridge",
+      "date": "1459-10-12",
+      "commanders": [
+        {"name": "Richard, Duke of York", "allegiance": "york"},
+        {"name": "Earl of Salisbury", "allegiance": "york"},
+        {"name": "Earl of Warwick", "allegiance": "york"},
+        {"name": "Andrew Trollope", "allegiance": "york", "notes": "Defected to Lancaster during the battle"},
+        {"name": "King Henry VI", "allegiance": "lancaster"}
+      ],
+      "victor": "lancaster",
+      "notes": "Yorkist army collapsed after defections; leaders fled abroad"
+    },
+    {
+      "name": "Battle of Northampton",
+      "date": "1460-07-10",
+      "commanders": [
+        {"name": "Earl of Warwick", "allegiance": "york"},
+        {"name": "Earl of March", "allegiance": "york"},
+        {"name": "Duke of Buckingham", "allegiance": "lancaster"},
+        {"name": "Lord Grey of Ruthin", "allegiance": "lancaster", "notes": "Defected to York during the battle"}
+      ],
+      "victor": "york",
+      "notes": "Henry VI captured; Buckingham killed"
+    },
+    {
+      "name": "Battle of Wakefield",
+      "date": "1460-12-30",
+      "commanders": [
+        {"name": "Richard, Duke of York", "allegiance": "york"},
+        {"name": "Earl of Salisbury", "allegiance": "york"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"},
+        {"name": "Earl of Northumberland", "allegiance": "lancaster"}
+      ],
+      "victor": "lancaster",
+      "notes": "Richard of York killed; major Lancastrian victory"
+    },
+    {
+      "name": "Battle of Mortimer's Cross",
+      "date": "1461-02-02",
+      "commanders": [
+        {"name": "Edward, Earl of March", "allegiance": "york"},
+        {"name": "Earl of Pembroke", "allegiance": "lancaster"},
+        {"name": "Earl of Wiltshire", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Future Edward IV's first major victory"
+    },
+    {
+      "name": "Second Battle of St Albans",
+      "date": "1461-02-17",
+      "commanders": [
+        {"name": "Earl of Warwick", "allegiance": "york"},
+        {"name": "Queen Margaret", "allegiance": "lancaster"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"}
+      ],
+      "victor": "lancaster",
+      "notes": "Henry VI freed from Yorkist custody"
+    },
+    {
+      "name": "Battle of Towton",
+      "date": "1461-03-29",
+      "commanders": [
+        {"name": "Edward IV", "allegiance": "york"},
+        {"name": "Earl of Warwick", "allegiance": "york"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"},
+        {"name": "Earl of Northumberland", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Largest and bloodiest battle on English soil; fought in a snowstorm"
+    },
+    {
+      "name": "Battle of Hedgeley Moor",
+      "date": "1464-04-25",
+      "commanders": [
+        {"name": "Lord Montagu", "allegiance": "york"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"},
+        {"name": "Sir Ralph Percy", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Part of campaign against Lancastrian holdouts in the north"
+    },
+    {
+      "name": "Battle of Hexham",
+      "date": "1464-05-15",
+      "commanders": [
+        {"name": "Lord Montagu", "allegiance": "york"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Somerset captured and executed; ended northern Lancastrian resistance"
+    },
+    {
+      "name": "Battle of Edgecote Moor",
+      "date": "1469-07-26",
+      "commanders": [
+        {"name": "Earl of Pembroke", "allegiance": "york"},
+        {"name": "Earl of Devon", "allegiance": "york"},
+        {"name": "Robin of Redesdale", "allegiance": "lancaster"},
+        {"name": "Earl of Warwick", "allegiance": "lancaster", "notes": "Formerly Yorkist; now in rebellion against Edward IV"}
+      ],
+      "victor": "lancaster",
+      "notes": "Warwick-backed rebellion against Edward IV"
+    },
+    {
+      "name": "Battle of Losecote Field",
+      "date": "1470-03-12",
+      "commanders": [
+        {"name": "Edward IV", "allegiance": "york"},
+        {"name": "Sir Robert Welles", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Named for discarded coats revealing rebel allegiances; Warwick fled to France"
+    },
+    {
+      "name": "Battle of Barnet",
+      "date": "1471-04-14",
+      "commanders": [
+        {"name": "Edward IV", "allegiance": "york"},
+        {"name": "Earl of Warwick", "allegiance": "lancaster"},
+        {"name": "Duke of Exeter", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Warwick 'the Kingmaker' killed; fought in heavy fog"
+    },
+    {
+      "name": "Battle of Tewkesbury",
+      "date": "1471-05-04",
+      "commanders": [
+        {"name": "Edward IV", "allegiance": "york"},
+        {"name": "Duke of Gloucester", "allegiance": "york"},
+        {"name": "Queen Margaret", "allegiance": "lancaster"},
+        {"name": "Duke of Somerset", "allegiance": "lancaster"},
+        {"name": "Prince Edward", "allegiance": "lancaster"}
+      ],
+      "victor": "york",
+      "notes": "Prince Edward killed; ended the main Lancastrian line"
+    },
+    {
+      "name": "Battle of Bosworth Field",
+      "date": "1485-08-22",
+      "commanders": [
+        {"name": "Richard III", "allegiance": "york"},
+        {"name": "Duke of Norfolk", "allegiance": "york"},
+        {"name": "Earl of Northumberland", "allegiance": "york", "notes": "Held back his forces; did not engage"},
+        {"name": "Henry Tudor", "allegiance": "tudor"},
+        {"name": "Earl of Oxford", "allegiance": "tudor"},
+        {"name": "Lord Stanley", "allegiance": "uncertain", "notes": "Nominally Yorkist; intervened for Tudor at the crucial moment"},
+        {"name": "Sir William Stanley", "allegiance": "uncertain", "notes": "Intervened decisively for Tudor"}
+      ],
+      "victor": "tudor",
+      "notes": "Richard III killed; Henry VII crowned; end of Yorkist rule"
+    },
+    {
+      "name": "Battle of Stoke Field",
+      "date": "1487-06-16",
+      "commanders": [
+        {"name": "Henry VII", "allegiance": "tudor"},
+        {"name": "Earl of Oxford", "allegiance": "tudor"},
+        {"name": "Earl of Lincoln", "allegiance": "york"},
+        {"name": "Lord Lovell", "allegiance": "york"},
+        {"name": "Martin Schwartz", "allegiance": "york", "notes": "German mercenary captain"}
+      ],
+      "victor": "tudor",
+      "notes": "Final battle of the wars; Lambert Simnel pretender defeated"
+    }
+  ]
+}
