@@ -163,7 +163,7 @@ def generate_event_html(event: dict, factions: dict) -> str:
                 </div>
             """
         
-        victor_badge = f"""<span class="victor-badge">{victor_rose} {victor_name}</span>"""
+        victor_badge = f"""<span class="victor-badge">{victor_rose}<span class="victor-name"> {victor_name}</span></span>"""
         
         details_html = f"""
             <div class="commanders-section">
@@ -226,9 +226,11 @@ def generate_event_html(event: dict, factions: dict) -> str:
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">{date}</span>
-                {type_badge}
+                <div class="type-victor-group">
+                    {type_badge}
+                    {victor_badge}
+                </div>
                 <span class="event-name">{name}</span>
-                {victor_badge}
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -577,6 +579,12 @@ def generate_html(data: dict, type_filter: list[str] = None) -> str:
             font-style: italic;
         }}
 
+        .type-victor-group {{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }}
+
         .victor-badge {{
             display: inline-flex;
             align-items: center;
@@ -587,6 +595,17 @@ def generate_html(data: dict, type_filter: list[str] = None) -> str:
             font-size: 0.8rem;
             white-space: nowrap;
             background: rgba(255,255,255,0.1);
+        }}
+
+        @media (max-width: 768px) {{
+            .victor-badge {{
+                padding: 3px;
+                gap: 0;
+            }}
+
+            .victor-badge .victor-name {{
+                display: none;
+            }}
         }}
 
         .event-details-section {{

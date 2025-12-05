@@ -320,6 +320,12 @@
             font-style: italic;
         }
 
+        .type-victor-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         .victor-badge {
             display: inline-flex;
             align-items: center;
@@ -330,6 +336,17 @@
             font-size: 0.8rem;
             white-space: nowrap;
             background: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .victor-badge {
+                padding: 3px;
+                gap: 0;
+            }
+
+            .victor-badge .victor-name {
+                display: none;
+            }
         }
 
         .event-details-section {
@@ -457,9 +474,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1455-05-22</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">St Albans (1st)</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -474,7 +491,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">St Albans (1st)</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -543,9 +562,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1459-09-23</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Blore Heath</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -560,7 +579,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Blore Heath</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -629,9 +650,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1459-10-12</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Ludford Bridge</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -646,7 +667,9 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg> Lancaster</span>
+        </svg><span class="victor-name"> Lancaster</span></span>
+                </div>
+                <span class="event-name">Ludford Bridge</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -715,9 +738,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1460-07-10</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Northampton</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -732,7 +755,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Northampton</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -801,9 +826,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1460-12-30</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Wakefield</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -818,7 +843,9 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg> Lancaster</span>
+        </svg><span class="victor-name"> Lancaster</span></span>
+                </div>
+                <span class="event-name">Wakefield</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -887,9 +914,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-02-02</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Mortimer's Cross</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -904,7 +931,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Mortimer's Cross</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -973,9 +1002,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-02-17</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">St Albans (2nd)</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -990,7 +1019,9 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg> Lancaster</span>
+        </svg><span class="victor-name"> Lancaster</span></span>
+                </div>
+                <span class="event-name">St Albans (2nd)</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1059,9 +1090,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-03-29</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Towton</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1076,7 +1107,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Towton</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1145,9 +1178,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-06-28</span>
-                <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
+                    
+                </div>
                 <span class="event-name">Edward IV</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1166,9 +1201,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1464-04-25</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Hedgeley Moor</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1183,7 +1218,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Hedgeley Moor</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1252,9 +1289,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1464-05-15</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Hexham</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1269,7 +1306,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Hexham</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1338,9 +1377,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1469-07-26</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Edgecote Moor</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1355,7 +1394,9 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg> Lancaster</span>
+        </svg><span class="victor-name"> Lancaster</span></span>
+                </div>
+                <span class="event-name">Edgecote Moor</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1424,9 +1465,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1470-03-12</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Losecote Field</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1441,7 +1482,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Losecote Field</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1510,9 +1553,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1471-04-14</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Barnet</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1527,7 +1570,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Barnet</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1596,9 +1641,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1471-05-04</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Tewkesbury</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1613,7 +1658,9 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg> York</span>
+        </svg><span class="victor-name"> York</span></span>
+                </div>
+                <span class="event-name">Tewkesbury</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1682,9 +1729,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1471-05-21</span>
-                <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
+                    
+                </div>
                 <span class="event-name">Henry VI</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1704,9 +1753,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1475-08-29</span>
-                <span class="type-badge" style="background-color: #4169E1; color: #fff">Treaty</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #4169E1; color: #fff">Treaty</span>
+                    
+                </div>
                 <span class="event-name">Picquigny</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1724,9 +1775,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1483-04-09</span>
-                <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
+                    
+                </div>
                 <span class="event-name">Edward IV</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1746,9 +1799,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1483-07-06</span>
-                <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
+                    
+                </div>
                 <span class="event-name">Richard III</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1767,9 +1822,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1483-09-01</span>
-                <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
+                    
+                </div>
                 <span class="event-name">Disappearance of the Princes in the Tower</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1789,9 +1846,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1485-08-22</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Bosworth Field</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1813,7 +1870,9 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg> Tudor</span>
+        </svg><span class="victor-name"> Tudor</span></span>
+                </div>
+                <span class="event-name">Bosworth Field</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1914,9 +1973,11 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1485-10-30</span>
-                <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
+                    
+                </div>
                 <span class="event-name">Henry VII</span>
-                
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
@@ -1935,9 +1996,9 @@
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1487-06-16</span>
-                <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                <span class="event-name">Stoke Field</span>
-                <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group">
+                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
+                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1959,7 +2020,9 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg> Tudor</span>
+        </svg><span class="victor-name"> Tudor</span></span>
+                </div>
+                <span class="event-name">Stoke Field</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
