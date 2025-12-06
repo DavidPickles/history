@@ -29,7 +29,7 @@
       "oneOf": [
         { "$ref": "#/$defs/battle" },
         { "$ref": "#/$defs/death" },
-        { "$ref": "#/$defs/coronation" },
+        { "$ref": "#/$defs/accession" },
         { "$ref": "#/$defs/treaty" }
       ],
       "discriminator": {
@@ -46,6 +46,7 @@
           "type": "string",
           "format": "date"
         },
+        "manner": { "type": "string" },
         "notes": { "type": "string" }
       }
     },
@@ -96,15 +97,16 @@
         }
       ]
     },
-    "coronation": {
+    "accession": {
       "allOf": [
         { "$ref": "#/$defs/eventBase" },
         {
           "type": "object",
           "required": ["type", "monarch"],
           "properties": {
-            "type": { "const": "coronation" },
+            "type": { "const": "accession" },
             "monarch": { "type": "string" },
+            "faction": { "type": "string" },
             "location": { "type": "string" }
           }
         }

@@ -5,380 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wars of the Roses - Timeline</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px;
-            }
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                margin-bottom: 30px;
-            }
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #aaa;
-        }
-
-        @media (max-width: 768px) {
-            .subtitle {
-                font-size: 1rem;
-            }
-        }
-        
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .legend-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .legend-title {
-            font-size: 0.75rem;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .legend-items {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.9rem;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            --btn-color: #555;
-            --btn-text: #fff;
-            background: transparent;
-            border: 2px solid var(--btn-color);
-            color: #aaa;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn:hover {
-            background: var(--btn-color);
-            color: var(--btn-text);
-        }
-
-        .filter-btn.active {
-            background: var(--btn-color);
-            color: var(--btn-text);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .timeline {
-                padding-left: 20px;
-            }
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #DC143C, #FFFFFF, #228B22);
-            border-radius: 3px;
-        }
-        
-        .event-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            margin-bottom: 8px;
-            border-left: 4px solid;
-            position: relative;
-            transition: transform 0.2s, box-shadow 0.2s;
-            overflow: hidden;
-        }
-
-        .event-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .event-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 15px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .event-summary {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .event-summary {
-                gap: 6px;
-            }
-        }
-
-        .expand-icon {
-            font-size: 1rem;
-            color: #888;
-            transition: transform 0.3s ease;
-            margin-left: 15px;
-        }
-
-        .event-card.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-
-        .event-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            padding: 0 15px;
-        }
-
-        .event-card.expanded .event-details {
-            max-height: 1000px;
-            padding: 0 15px 15px 15px;
-        }
-
-        .event-card::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 15px;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            border-radius: 50%;
-            border: 3px solid #1a1a2e;
-        }
-
-        @media (max-width: 768px) {
-            .event-card::before {
-                left: -28px;
-                width: 8px;
-                height: 8px;
-            }
-        }
-
-        .event-date {
-            font-size: 1rem;
-            color: #ddd;
-            font-family: monospace;
-            font-weight: 600;
-            min-width: 80px;
-        }
-
-        @media (max-width: 768px) {
-            .event-date {
-                font-size: 0.85rem;
-                min-width: 70px;
-            }
-        }
-
-        .type-badge {
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: normal;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            opacity: 0.7;
-        }
-
-        .event-name {
-            font-size: 1rem;
-            color: #fff;
-            font-weight: 500;
-            flex: 1;
-            min-width: 120px;
-        }
-
-        @media (max-width: 768px) {
-            .event-name {
-                font-size: 0.9rem;
-                min-width: 100px;
-            }
-        }
-        
-        .commanders-section {
-            margin-bottom: 15px;
-        }
-        
-        .commanders-section h3 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: #888;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        
-        .faction-group {
-            margin-bottom: 10px;
-        }
-        
-        .faction-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 3px 10px 3px 3px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .commander-list {
-            list-style: none;
-            padding-left: 15px;
-        }
-        
-        .commander-list li {
-            font-size: 0.95rem;
-            padding: 2px 0;
-            color: #ccc;
-        }
-        
-        .cmd-note {
-            font-size: 0.8rem;
-            color: #f0ad4e;
-            font-style: italic;
-        }
-
-        .type-victor-group {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .victor-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            padding: 3px 10px 3px 3px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            background: rgba(255,255,255,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .victor-badge {
-                padding: 3px;
-                gap: 0;
-            }
-
-            .victor-badge .victor-name {
-                display: none;
-            }
-        }
-
-        .event-details-section {
-            margin-bottom: 15px;
-        }
-
-        .event-details-section p {
-            margin: 5px 0;
-            color: #ccc;
-        }
-
-        .event-details-section strong {
-            color: #aaa;
-        }
-        
-        .battle-notes {
-            font-style: italic;
-            color: #aaa;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 15px;
-            margin-top: 10px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #666;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+        @media (max-width: 768px) { .container { padding: 20px 15px; } }
+        header { text-align: center; margin-bottom: 50px; }
+        @media (max-width: 768px) { header { margin-bottom: 30px; } }
+        h1 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        @media (max-width: 768px) { h1 { font-size: 1.8rem; } }
+        .subtitle { font-size: 1.2rem; color: #aaa; }
+        @media (max-width: 768px) { .subtitle { font-size: 1rem; } }
+        .legend { display: flex; justify-content: center; gap: 40px; margin: 30px 0; flex-wrap: wrap; }
+        .legend-section { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .legend-title { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .legend-items { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+        .filter-buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+        .filter-btn { --btn-color: #555; --btn-text: #fff; background: transparent; border: 2px solid var(--btn-color); color: #aaa; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+        .filter-btn:hover { background: var(--btn-color); color: var(--btn-text); }
+        .filter-btn.active { background: var(--btn-color); color: var(--btn-text); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+        .timeline { position: relative; padding-left: 30px; }
+        @media (max-width: 768px) { .timeline { padding-left: 20px; } }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #DC143C, #FFFFFF, #228B22); border-radius: 3px; }
+        .event-card { background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; border-left: 4px solid; position: relative; transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
+        .event-card:hover { transform: translateX(5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .event-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; cursor: pointer; user-select: none; }
+        .event-summary { flex: 1; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        @media (max-width: 768px) { .event-summary { gap: 6px; } }
+        .expand-icon { font-size: 1rem; color: #888; transition: transform 0.3s ease; margin-left: 15px; }
+        .event-card.expanded .expand-icon { transform: rotate(180deg); }
+        .event-details { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 15px; }
+        .event-card.expanded .event-details { max-height: 1000px; padding: 0 15px 15px 15px; }
+        .event-card::before { content: ''; position: absolute; left: -38px; top: 15px; width: 10px; height: 10px; background: #fff; border-radius: 50%; border: 3px solid #1a1a2e; }
+        @media (max-width: 768px) { .event-card::before { left: -28px; width: 8px; height: 8px; } }
+        .event-date { font-size: 1rem; color: #ddd; font-family: monospace; font-weight: 600; min-width: 80px; }
+        @media (max-width: 768px) { .event-date { font-size: 0.85rem; min-width: 70px; } }
+        .type-badge { padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: normal; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; }
+        .event-name { font-size: 1rem; color: #fff; font-weight: 500; flex: 1; min-width: 120px; }
+        @media (max-width: 768px) { .event-name { font-size: 0.9rem; min-width: 100px; } }
+        .commanders-section { margin-bottom: 15px; }
+        .commanders-section h3 { font-size: 0.85rem; text-transform: uppercase; color: #888; margin-bottom: 10px; letter-spacing: 1px; }
+        .faction-group { margin-bottom: 10px; }
+        .faction-badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 3px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-bottom: 5px; background: rgba(255,255,255,0.1); }
+        .commander-list { list-style: none; padding-left: 15px; }
+        .commander-list li { font-size: 0.95rem; padding: 2px 0; color: #ccc; }
+        .cmd-note { font-size: 0.8rem; color: #f0ad4e; font-style: italic; }
+        .type-victor-group { display: flex; align-items: center; gap: 6px; }
+        .victor-badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px 3px 3px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; white-space: nowrap; background: rgba(255,255,255,0.1); }
+        @media (max-width: 768px) { .victor-badge { padding: 3px; gap: 0; } .victor-badge .victor-name { display: none; } }
+        .event-details-section { margin-bottom: 15px; }
+        .event-details-section p { margin: 5px 0; color: #ccc; }
+        .event-details-section strong { color: #aaa; }
+        .battle-notes { font-style: italic; color: #aaa; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; margin-top: 10px; }
+        footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; }
     </style>
 </head>
 <body>
@@ -386,13 +65,11 @@
         <header>
             <h1>&#9876;&#65039; Wars of the Roses</h1>
             <p class="subtitle">1455-1487 &bull; All Events</p>
-            
             <div class="legend">
                 <div class="legend-section">
                     <span class="legend-title">Factions</span>
                     <div class="legend-items">
-                        <div class="legend-item">
-                            <svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align: middle;">
+                        <div class="legend-item"><svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -407,11 +84,8 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                            <span>York</span>
-                        </div>
-                        <div class="legend-item">
-                            <svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align: middle;">
+        </svg><span>York</span></div>
+                        <div class="legend-item"><svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -426,11 +100,8 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                            <span>Lancaster</span>
-                        </div>
-                        <div class="legend-item">
-                            <svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align: middle;">
+        </svg><span>Lancaster</span></div>
+                        <div class="legend-item"><svg width="28" height="28" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -438,13 +109,11 @@
                 </radialGradient>
             </defs>
             <g transform="translate(50,50)">
-                <!-- Outer red petals -->
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(0)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(72)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(144)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(216)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
-                <!-- Inner white petals -->
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(36)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(108)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(180)"/>
@@ -452,9 +121,7 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg>
-                            <span>Tudor</span>
-                        </div>
+        </svg><span>Tudor</span></div>
                     </div>
                 </div>
                 <div class="legend-section">
@@ -462,23 +129,19 @@
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-type="all">All</button>
                         <button class="filter-btn" data-type="battle" style="--btn-color: #8B0000;">Battle</button>
-                        <button class="filter-btn" data-type="coronation" style="--btn-color: #FFD700; --btn-text: #000;">Coronation</button>
+                        <button class="filter-btn" data-type="accession" style="--btn-color: #FFD700; --btn-text: #000;">Accession</button>
                         <button class="filter-btn" data-type="death" style="--btn-color: #2c2c2c;">Death</button>
                         <button class="filter-btn" data-type="treaty" style="--btn-color: #4169E1;">Treaty</button>
                     </div>
                 </div>
             </div>
         </header>
-
         <div class="timeline">
-            
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1455-05-22</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -493,20 +156,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">St Albans (1st)</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -521,17 +178,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Richard, Duke of York</li><li>Earl of Salisbury</li><li>Earl of Warwick</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Richard, Duke of York</li><li>Earl of Salisbury</li><li>Earl of Warwick</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -546,27 +197,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>King Henry VI</li><li>Duke of Somerset</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Opening battle of the wars; Henry VI captured; Somerset killed</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>King Henry VI</li><li>Duke of Somerset</li></ul>
+                </div></div><p class="battle-notes">Opening battle of the wars; Henry VI captured; Somerset killed</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1459-09-23</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -581,20 +220,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Blore Heath</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -609,17 +242,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Salisbury</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Earl of Salisbury</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -634,27 +261,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Lord Audley</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Audley killed; Yorkist force outnumbered but victorious</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Lord Audley</li></ul>
+                </div></div><p class="battle-notes">Audley killed; Yorkist force outnumbered but victorious</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #DC143C">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1459-10-12</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -669,20 +284,14 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg><span class="victor-name"> Lancaster</span></span>
-                </div>
+        </svg><span class="victor-name"> Lancaster</span></span></div>
                 <span class="event-name">Ludford Bridge</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -697,17 +306,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Richard, Duke of York</li><li>Earl of Salisbury</li><li>Earl of Warwick</li><li>Andrew Trollope <span class='cmd-note'>(Defected to Lancaster during the battle)</span></li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Richard, Duke of York</li><li>Earl of Salisbury</li><li>Earl of Warwick</li><li>Andrew Trollope <span class='cmd-note'>(Defected to Lancaster during the battle)</span></li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -722,27 +325,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>King Henry VI</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Yorkist army collapsed after defections; leaders fled abroad</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>King Henry VI</li></ul>
+                </div></div><p class="battle-notes">Yorkist army collapsed after defections; leaders fled abroad</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1460-07-10</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -757,20 +348,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Northampton</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -785,17 +370,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Warwick</li><li>Earl of March</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Earl of Warwick</li><li>Earl of March</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -810,27 +389,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Duke of Buckingham</li><li>Lord Grey of Ruthin <span class='cmd-note'>(Defected to York during the battle)</span></li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Henry VI captured; Buckingham killed</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Duke of Buckingham</li><li>Lord Grey of Ruthin <span class='cmd-note'>(Defected to York during the battle)</span></li></ul>
+                </div></div><p class="battle-notes">Henry VI captured; Buckingham killed</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #DC143C">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1460-12-30</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -845,20 +412,14 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg><span class="victor-name"> Lancaster</span></span>
-                </div>
+        </svg><span class="victor-name"> Lancaster</span></span></div>
                 <span class="event-name">Wakefield</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -873,17 +434,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Richard, Duke of York</li><li>Earl of Salisbury</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Richard, Duke of York</li><li>Earl of Salisbury</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -898,27 +453,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Duke of Somerset</li><li>Earl of Northumberland</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Richard of York killed; major Lancastrian victory</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Duke of Somerset</li><li>Earl of Northumberland</li></ul>
+                </div></div><p class="battle-notes">Richard of York killed; major Lancastrian victory</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-02-02</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -933,20 +476,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Mortimer's Cross</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -961,17 +498,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Edward, Earl of March</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Edward, Earl of March</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -986,27 +517,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Pembroke</li><li>Earl of Wiltshire</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Future Edward IV's first major victory</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Earl of Pembroke</li><li>Earl of Wiltshire</li></ul>
+                </div></div><p class="battle-notes">Future Edward IV's first major victory</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #DC143C">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-02-17</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1021,20 +540,14 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg><span class="victor-name"> Lancaster</span></span>
-                </div>
+        </svg><span class="victor-name"> Lancaster</span></span></div>
                 <span class="event-name">St Albans (2nd)</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1049,17 +562,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Warwick</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Earl of Warwick</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1074,27 +581,29 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Queen Margaret</li><li>Duke of Somerset</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Henry VI freed from Yorkist custody</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Queen Margaret</li><li>Duke of Somerset</li></ul>
+                </div></div><p class="battle-notes">Henry VI freed from Yorkist custody</p></div>
     </div>
-    
+    <div class="event-card" data-type="accession" style="border-left-color: #FFD700">
+        <div class="event-header" onclick="toggleEvent(this)">
+            <div class="event-summary">
+                <span class="event-date">1461-03-04</span>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #FFD700; color: #000">Accession</span></div>
+                <span class="event-name">Edward IV</span>
+            </div>
+            <div class="expand-icon">&#9660;</div>
+        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Monarch:</strong> Edward IV</p>
+            <p><strong>Manner:</strong> Acclamation</p><p><strong>Location:</strong> London</p>
+        </div><p class="battle-notes">Acclaimed king after Yorkist lords rejected Henry VI; crowned June 28 at Westminster Abbey</p></div>
+    </div>
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1461-03-29</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1109,20 +618,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Towton</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1137,17 +640,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Edward IV</li><li>Earl of Warwick</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Edward IV</li><li>Earl of Warwick</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1162,50 +659,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Duke of Somerset</li><li>Earl of Northumberland</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Largest and bloodiest battle on English soil; fought in a snowstorm</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Duke of Somerset</li><li>Earl of Northumberland</li></ul>
+                </div></div><p class="battle-notes">Largest and bloodiest battle on English soil; fought in a snowstorm</p></div>
     </div>
-    
-    <div class="event-card" data-type="coronation" style="border-left-color: #FFD700">
-        <div class="event-header" onclick="toggleEvent(this)">
-            <div class="event-summary">
-                <span class="event-date">1461-06-28</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
-                    
-                </div>
-                <span class="event-name">Edward IV</span>
-            </div>
-            <div class="expand-icon">&#9660;</div>
-        </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Monarch:</strong> Edward IV</p>
-                <p><strong>Location:</strong> Westminster Abbey</p>
-            </div>
-            <p class="battle-notes">First Yorkist king; crowned after victories at Mortimer's Cross and Towton</p>
-        
-        </div>
-    </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1464-04-25</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1220,20 +682,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Hedgeley Moor</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1248,17 +704,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Lord Montagu</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Lord Montagu</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1273,27 +723,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Duke of Somerset</li><li>Sir Ralph Percy</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Part of campaign against Lancastrian holdouts in the north</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Duke of Somerset</li><li>Sir Ralph Percy</li></ul>
+                </div></div><p class="battle-notes">Part of campaign against Lancastrian holdouts in the north</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1464-05-15</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1308,20 +746,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Hexham</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1336,17 +768,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Lord Montagu</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Lord Montagu</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1361,27 +787,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Duke of Somerset</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Somerset captured and executed; ended northern Lancastrian resistance</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Duke of Somerset</li></ul>
+                </div></div><p class="battle-notes">Somerset captured and executed; ended northern Lancastrian resistance</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #DC143C">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1469-07-26</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1396,20 +810,14 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg><span class="victor-name"> Lancaster</span></span>
-                </div>
+        </svg><span class="victor-name"> Lancaster</span></span></div>
                 <span class="event-name">Edgecote Moor</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1424,17 +832,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Pembroke</li><li>Earl of Devon</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Earl of Pembroke</li><li>Earl of Devon</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1449,27 +851,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Robin of Redesdale</li><li>Earl of Warwick <span class='cmd-note'>(Formerly Yorkist; now in rebellion against Edward IV)</span></li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Warwick-backed rebellion against Edward IV</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Robin of Redesdale</li><li>Earl of Warwick <span class='cmd-note'>(Formerly Yorkist; now in rebellion against Edward IV)</span></li></ul>
+                </div></div><p class="battle-notes">Warwick-backed rebellion against Edward IV</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1470-03-12</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1484,20 +874,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Losecote Field</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1512,17 +896,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Edward IV</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Edward IV</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1537,27 +915,43 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Sir Robert Welles</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Named for discarded coats revealing rebel allegiances; Warwick fled to France</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Sir Robert Welles</li></ul>
+                </div></div><p class="battle-notes">Named for discarded coats revealing rebel allegiances; Warwick fled to France</p></div>
     </div>
-    
+    <div class="event-card" data-type="accession" style="border-left-color: #FFD700">
+        <div class="event-header" onclick="toggleEvent(this)">
+            <div class="event-summary">
+                <span class="event-date">1470-10-03</span>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #FFD700; color: #000">Accession</span></div>
+                <span class="event-name">Henry VI (Readeption)</span>
+            </div>
+            <div class="expand-icon">&#9660;</div>
+        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Monarch:</strong> Henry VI</p>
+            <p><strong>Manner:</strong> Readeption</p><p><strong>Location:</strong> London</p>
+        </div><p class="battle-notes">Restored by Warwick after Edward IV fled to Burgundy; Henry's second reign began with his release from the Tower</p></div>
+    </div>
+    <div class="event-card" data-type="accession" style="border-left-color: #FFD700">
+        <div class="event-header" onclick="toggleEvent(this)">
+            <div class="event-summary">
+                <span class="event-date">1471-04-11</span>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #FFD700; color: #000">Accession</span></div>
+                <span class="event-name">Edward IV (Restoration)</span>
+            </div>
+            <div class="expand-icon">&#9660;</div>
+        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Monarch:</strong> Edward IV</p>
+            <p><strong>Manner:</strong> Restoration</p><p><strong>Location:</strong> London</p>
+        </div><p class="battle-notes">Returned from Burgundian exile and entered London; Henry VI returned to the Tower</p></div>
+    </div>
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1471-04-14</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1572,20 +966,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Barnet</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1600,17 +988,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Edward IV</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Edward IV</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1625,27 +1007,15 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Warwick</li><li>Duke of Exeter</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Warwick 'the Kingmaker' killed; fought in heavy fog</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Earl of Warwick</li><li>Duke of Exeter</li></ul>
+                </div></div><p class="battle-notes">Warwick 'the Kingmaker' killed; fought in heavy fog</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #FFFFFF">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1471-05-04</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1660,20 +1030,14 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg><span class="victor-name"> York</span></span>
-                </div>
+        </svg><span class="victor-name"> York</span></span></div>
                 <span class="event-name">Tewkesbury</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1688,17 +1052,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Edward IV</li><li>Duke of Gloucester</li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Edward IV</li><li>Duke of Gloucester</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="lancasterCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1713,144 +1071,87 @@
                 <ellipse rx="22" ry="38" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#lancasterCenter)"/>
             </g>
-        </svg>
-                        Lancaster
-                    </span>
-                    <ul class="commander-list">
-                        <li>Queen Margaret</li><li>Duke of Somerset</li><li>Prince Edward</li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Prince Edward killed; ended the main Lancastrian line</p>
-        
-        </div>
+        </svg> Lancaster</span>
+                    <ul class="commander-list"><li>Queen Margaret</li><li>Duke of Somerset</li><li>Prince Edward</li></ul>
+                </div></div><p class="battle-notes">Prince Edward killed; ended the main Lancastrian line</p></div>
     </div>
-    
     <div class="event-card" data-type="death" style="border-left-color: #2c2c2c">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1471-05-21</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
-                    
-                </div>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span></div>
                 <span class="event-name">Henry VI</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Person:</strong> King Henry VI</p>
-                <p><strong>Location:</strong> Tower of London</p>
-                <p><strong>Cause:</strong> Murder (officially 'melancholy')</p>
-            </div>
-            <p class="battle-notes">Died the night Edward IV returned to London; almost certainly killed on Edward's orders</p>
-        
-        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Person:</strong> King Henry VI</p>
+            <p><strong>Location:</strong> Tower of London</p>
+            <p><strong>Cause:</strong> Murder (officially 'melancholy')</p>
+        </div><p class="battle-notes">Died the night Edward IV returned to London; almost certainly killed on Edward's orders</p></div>
     </div>
-    
     <div class="event-card" data-type="treaty" style="border-left-color: #4169E1">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1475-08-29</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #4169E1; color: #fff">Treaty</span>
-                    
-                </div>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #4169E1; color: #fff">Treaty</span></div>
                 <span class="event-name">Picquigny</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Parties:</strong> England, France</p>
-            </div>
-            <p class="battle-notes">Edward IV agreed to withdraw from France in exchange for 75,000 crowns and an annual pension</p>
-        
-        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Parties:</strong> England, France</p>
+        </div><p class="battle-notes">Edward IV agreed to withdraw from France in exchange for 75,000 crowns and an annual pension</p></div>
     </div>
-    
     <div class="event-card" data-type="death" style="border-left-color: #2c2c2c">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1483-04-09</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
-                    
-                </div>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span></div>
                 <span class="event-name">Edward IV</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Person:</strong> King Edward IV</p>
-                <p><strong>Location:</strong> Westminster</p>
-                <p><strong>Cause:</strong> Illness (possibly pneumonia or typhoid)</p>
-            </div>
-            <p class="battle-notes">Unexpected death at age 40 triggered succession crisis</p>
-        
-        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Person:</strong> King Edward IV</p>
+            <p><strong>Location:</strong> Westminster</p>
+            <p><strong>Cause:</strong> Illness (possibly pneumonia or typhoid)</p>
+        </div><p class="battle-notes">Unexpected death at age 40 triggered succession crisis</p></div>
     </div>
-    
-    <div class="event-card" data-type="coronation" style="border-left-color: #FFD700">
+    <div class="event-card" data-type="accession" style="border-left-color: #FFD700">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
-                <span class="event-date">1483-07-06</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
-                    
-                </div>
+                <span class="event-date">1483-06-26</span>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #FFD700; color: #000">Accession</span></div>
                 <span class="event-name">Richard III</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Monarch:</strong> Richard III</p>
-                <p><strong>Location:</strong> Westminster Abbey</p>
-            </div>
-            <p class="battle-notes">Crowned after declaring his nephews illegitimate</p>
-        
-        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Monarch:</strong> Richard III</p>
+            <p><strong>Manner:</strong> Usurpation</p><p><strong>Location:</strong> London</p>
+        </div><p class="battle-notes">Declared king after his nephews were declared illegitimate; crowned July 6 at Westminster Abbey</p></div>
     </div>
-    
     <div class="event-card" data-type="death" style="border-left-color: #2c2c2c">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1483-09-01</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span>
-                    
-                </div>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #2c2c2c; color: #fff">Death</span></div>
                 <span class="event-name">Disappearance of the Princes in the Tower</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Person:</strong> Edward V and Richard of York</p>
-                <p><strong>Location:</strong> Tower of London</p>
-                <p><strong>Cause:</strong> Unknown (presumed murdered)</p>
-            </div>
-            <p class="battle-notes">Last seen around late summer 1483; fate remains one of history's great mysteries</p>
-        
-        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Person:</strong> Edward V and Richard of York</p>
+            <p><strong>Location:</strong> Tower of London</p>
+            <p><strong>Cause:</strong> Unknown (presumed murdered)</p>
+        </div><p class="battle-notes">Last seen around late summer 1483; fate remains one of history's great mysteries</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #228B22">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1485-08-22</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1858,13 +1159,11 @@
                 </radialGradient>
             </defs>
             <g transform="translate(50,50)">
-                <!-- Outer red petals -->
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(0)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(72)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(144)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(216)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
-                <!-- Inner white petals -->
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(36)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(108)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(180)"/>
@@ -1872,20 +1171,14 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg><span class="victor-name"> Tudor</span></span>
-                </div>
+        </svg><span class="victor-name"> Tudor</span></span></div>
                 <span class="event-name">Bosworth Field</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1900,17 +1193,11 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Richard III</li><li>Duke of Norfolk</li><li>Earl of Northumberland <span class='cmd-note'>(Held back his forces; did not engage)</span></li>
-                    </ul>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Richard III</li><li>Duke of Norfolk</li><li>Earl of Northumberland <span class='cmd-note'>(Held back his forces; did not engage)</span></li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -1918,13 +1205,11 @@
                 </radialGradient>
             </defs>
             <g transform="translate(50,50)">
-                <!-- Outer red petals -->
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(0)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(72)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(144)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(216)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
-                <!-- Inner white petals -->
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(36)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(108)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(180)"/>
@@ -1932,17 +1217,11 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg>
-                        Tudor
-                    </span>
-                    <ul class="commander-list">
-                        <li>Henry Tudor</li><li>Earl of Oxford</li>
-                    </ul>
+        </svg> Tudor</span>
+                    <ul class="commander-list"><li>Henry Tudor</li><li>Earl of Oxford</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="uncertainCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#999"/>
@@ -1957,50 +1236,29 @@
                 <ellipse rx="22" ry="38" fill="#808080" stroke="#666" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#uncertainCenter)"/>
             </g>
-        </svg>
-                        Uncertain
-                    </span>
-                    <ul class="commander-list">
-                        <li>Lord Stanley <span class='cmd-note'>(Nominally Yorkist; intervened for Tudor at the crucial moment)</span></li><li>Sir William Stanley <span class='cmd-note'>(Intervened decisively for Tudor)</span></li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Richard III killed; Henry VII crowned; end of Yorkist rule</p>
-        
-        </div>
+        </svg> Uncertain</span>
+                    <ul class="commander-list"><li>Lord Stanley <span class='cmd-note'>(Nominally Yorkist; intervened for Tudor at the crucial moment)</span></li><li>Sir William Stanley <span class='cmd-note'>(Intervened decisively for Tudor)</span></li></ul>
+                </div></div><p class="battle-notes">Richard III killed; last English king to die in battle</p></div>
     </div>
-    
-    <div class="event-card" data-type="coronation" style="border-left-color: #FFD700">
+    <div class="event-card" data-type="accession" style="border-left-color: #FFD700">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
-                <span class="event-date">1485-10-30</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #FFD700; color: #000">Coronation</span>
-                    
-                </div>
+                <span class="event-date">1485-08-22</span>
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #FFD700; color: #000">Accession</span></div>
                 <span class="event-name">Henry VII</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="event-details-section">
-                <p><strong>Monarch:</strong> Henry VII</p>
-                <p><strong>Location:</strong> Westminster Abbey</p>
-            </div>
-            <p class="battle-notes">First Tudor monarch; married Elizabeth of York to unite the houses</p>
-        
-        </div>
+        <div class="event-details"><div class="event-details-section">
+            <p><strong>Monarch:</strong> Henry VII</p>
+            <p><strong>Manner:</strong> Conquest</p><p><strong>Location:</strong> Bosworth Field</p>
+        </div><p class="battle-notes">Acclaimed king on the battlefield; crowned October 30 at Westminster Abbey; married Elizabeth of York to unite the houses</p></div>
     </div>
-    
     <div class="event-card" data-type="battle" style="border-left-color: #228B22">
         <div class="event-header" onclick="toggleEvent(this)">
             <div class="event-summary">
                 <span class="event-date">1487-06-16</span>
-                <div class="type-victor-group">
-                    <span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span>
-                    <span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
+                <div class="type-victor-group"><span class="type-badge" style="background-color: #8B0000; color: #fff">Battle</span><span class="victor-badge"><svg width="20" height="20" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -2008,13 +1266,11 @@
                 </radialGradient>
             </defs>
             <g transform="translate(50,50)">
-                <!-- Outer red petals -->
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(0)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(72)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(144)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(216)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
-                <!-- Inner white petals -->
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(36)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(108)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(180)"/>
@@ -2022,20 +1278,14 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg><span class="victor-name"> Tudor</span></span>
-                </div>
+        </svg><span class="victor-name"> Tudor</span></span></div>
                 <span class="event-name">Stoke Field</span>
             </div>
             <div class="expand-icon">&#9660;</div>
         </div>
-        <div class="event-details">
-            
-            <div class="commanders-section">
-                <h3>Commanders</h3>
-                
+        <div class="event-details"><div class="commanders-section"><h3>Commanders</h3>
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="tudorCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -2043,13 +1293,11 @@
                 </radialGradient>
             </defs>
             <g transform="translate(50,50)">
-                <!-- Outer red petals -->
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(0)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(72)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(144)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(216)"/>
                 <ellipse rx="22" ry="40" fill="#DC143C" stroke="#8B0000" stroke-width="1" transform="rotate(288)"/>
-                <!-- Inner white petals -->
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(36)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(108)"/>
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(180)"/>
@@ -2057,17 +1305,11 @@
                 <ellipse rx="14" ry="26" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(324)"/>
                 <circle r="10" fill="url(#tudorCenter)"/>
             </g>
-        </svg>
-                        Tudor
-                    </span>
-                    <ul class="commander-list">
-                        <li>Henry VII</li><li>Earl of Oxford</li>
-                    </ul>
+        </svg> Tudor</span>
+                    <ul class="commander-list"><li>Henry VII</li><li>Earl of Oxford</li></ul>
                 </div>
-            
                 <div class="faction-group">
-                    <span class="faction-badge">
-                        <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
+                    <span class="faction-badge"><svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align: middle;">
             <defs>
                 <radialGradient id="yorkCenter" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" style="stop-color:#FFD700"/>
@@ -2082,49 +1324,24 @@
                 <ellipse rx="22" ry="38" fill="#FFFFFF" stroke="#DDD" stroke-width="1" transform="rotate(288)"/>
                 <circle r="12" fill="url(#yorkCenter)"/>
             </g>
-        </svg>
-                        York
-                    </span>
-                    <ul class="commander-list">
-                        <li>Earl of Lincoln</li><li>Lord Lovell</li><li>Martin Schwartz <span class='cmd-note'>(German mercenary captain)</span></li>
-                    </ul>
-                </div>
-            
-            </div>
-            <p class="battle-notes">Final battle of the wars; Lambert Simnel pretender defeated</p>
-        
-        </div>
+        </svg> York</span>
+                    <ul class="commander-list"><li>Earl of Lincoln</li><li>Lord Lovell</li><li>Martin Schwartz <span class='cmd-note'>(German mercenary captain)</span></li></ul>
+                </div></div><p class="battle-notes">Final battle of the wars; Lambert Simnel pretender defeated</p></div>
+    </div></div>
+        <footer><p>Wars of the Roses Timeline &bull; Data Visualization</p></footer>
     </div>
-    
-        </div>
-        
-        <footer>
-            <p>Wars of the Roses Timeline &bull; Data Visualization</p>
-        </footer>
-    </div>
-
     <script>
         function toggleEvent(headerElement) {
             const card = headerElement.closest('.event-card');
             card.classList.toggle('expanded');
         }
-
-        // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active state
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const filterType = btn.dataset.type;
-                const cards = document.querySelectorAll('.event-card');
-
-                cards.forEach(card => {
-                    if (filterType === 'all' || card.dataset.type === filterType) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                document.querySelectorAll('.event-card').forEach(card => {
+                    card.style.display = (filterType === 'all' || card.dataset.type === filterType) ? '' : 'none';
                 });
             });
         });
