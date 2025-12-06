@@ -497,15 +497,16 @@ def generate_html(data: dict, type_filter: list[str] = None) -> str:
         }}
 
         .event-date {{
-            font-size: 0.85rem;
-            color: #888;
+            font-size: 1rem;
+            color: #ddd;
             font-family: monospace;
+            font-weight: 600;
             min-width: 80px;
         }}
 
         @media (max-width: 768px) {{
             .event-date {{
-                font-size: 0.75rem;
+                font-size: 0.85rem;
                 min-width: 70px;
             }}
         }}
@@ -513,10 +514,11 @@ def generate_html(data: dict, type_filter: list[str] = None) -> str:
         .type-badge {{
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: bold;
+            font-size: 0.65rem;
+            font-weight: normal;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            opacity: 0.7;
         }}
 
         .event-name {{
